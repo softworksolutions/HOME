@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Softwork Solutions</title>
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <link rel="stylesheet" href="services.css" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script defer src="script.js"></script>
+  <link rel="icon" type="image/png" href="logo-light.png">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Firebase SDK for Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCQsc-_nnGKlxHfhMBD4rIovrjLla0yp-4",
+      authDomain: "software-solutions-f17c1.firebaseapp.com",
+      projectId: "software-solutions-f17c1",
+      storageBucket: "software-solutions-f17c1.appspot.com",
+      messagingSenderId: "911290181585",
+      appId: "1:911290181585:web:30109dccae395055aa62f0"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const isLoggedIn = localStorage.getItem("softwork_logged_in") === "true";
+      const guestMsg = document.querySelector(".guest-message");
+      const loggedMsg = document.querySelector(".logged-message");
+      const form = document.querySelector(".onboarding-form");
+
+      if (isLoggedIn) {
+        if (guestMsg) guestMsg.style.display = "none";
+        if (loggedMsg) loggedMsg.style.display = "block";
+        if (form) form.style.display = "block";
+      } else {
+        if (guestMsg) guestMsg.style.display = "block";
+        if (loggedMsg) loggedMsg.style.display = "none";
+        if (form) form.style.display = "none";
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="cursor-ghost" id="ghost">
+    <div class="ghost-body">
+      <canvas id="ghost-liquid"></canvas>
+      <div class="face">
+        <div class="eyes">
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+        </div>
+        <div class="mouth"></div>
+      </div>
+      <div class="hands">
+        <div class="hand left-hand"></div>
+        <div class="hand right-hand"></div>
+      </div>
+      <div class="wavy-bottom">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="speech-bubble">Hi there!</div>
+    </div>
+  </div>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="logo">
+          <img id="logo-img" src="logo.png" alt="Softwork Logo">
+          <span>Softwork Solutions</span>
+        </div>
+      </div>
+      <div class="mobile-only">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+      <div class="nav-center">
+        <label class="theme-switch">
+          <span class="icon light"><i data-lucide="sun"></i></span>
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+          <span class="icon dark"><i data-lucide="moon"></i></span>
+        </label>
+      </div>
+
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="account.html" id="profile-icon-link" style="display: none;" title="Account">
+          <i data-lucide="user-circle" class="nav-profile-icon"></i>
+        </a>
+        <a href="join.html" class="btn login-btn" id="login-button">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero pre-fade">
+    <canvas id="services-bg"></canvas>
+
+    <div class="hero-socials">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+    </div>
+
+    <div class="hero-inner">
+      <h1>Our Services</h1>
+      <p>Explore our full capabilities across software, cloud, digital, and strategy</p>
+    </div>
+  </section>
+
+  <section class="services-detail">
+    <div class="container">
+
+      <div class="service-detail">
+        <i data-lucide="code"></i>
+        <h2>Custom Software & Web Development</h2>
+        <p>We craft digital platforms using the best tools in the industry—whether it’s a mobile app, website, or a
+          robust enterprise system.</p>
+        <ul class="feature-list">
+          <li><i data-lucide="check-circle"></i> Responsive websites (HTML5, React, Next.js)</li>
+          <li><i data-lucide="check-circle"></i> Mobile apps (native iOS/Android & hybrid frameworks)</li>
+          <li><i data-lucide="check-circle"></i> Bespoke desktop and enterprise software</li>
+        </ul>
+        <div class="hover-overlay">
+          <div class="overlay-inner">
+            <h3>More Info</h3>
+            <p>Our custom software solutions are designed to grow with your business. We don't just code — we architect.
+              Whether you need a sleek marketing site, a full-stack enterprise portal, or a cross-platform mobile app,
+              our team ensures performance, scalability, and maintainability from day one. Using frameworks like React,
+              Next.js, and secure backend stacks, we craft digital tools that streamline operations, elevate user
+              experience, and give you a competitive edge. From wireframe to deployment, we work closely with your team
+              to bring your digital vision to life, ensuring every feature is purposeful, and every pixel is polished.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail pre-fade">
+        <i data-lucide="server"></i>
+        <h2>IT Infrastructure & Cloud Solutions</h2>
+        <p>We deliver a rock-solid digital foundation including cloud hosting, migration, and infrastructure monitoring.
+        </p>
+        <ul class="feature-list">
+          <li><i data-lucide="check-circle"></i> Domain registration, hosting & CDN setup</li>
+          <li><i data-lucide="check-circle"></i> Server management & monitoring (on-prem & cloud)</li>
+          <li><i data-lucide="check-circle"></i> Cloud migrations, AWS/Azure/GCP consulting</li>
+        </ul>
+        <div class="hover-overlay">
+          <div class="overlay-inner">
+            <h3>More Info</h3>
+            <p>Behind every reliable digital product is an even more reliable infrastructure. Our team helps you build a
+              solid cloud foundation using industry leaders like AWS, Azure, and Google Cloud. We handle everything from
+              domain provisioning and scalable hosting to virtual network setup and cloud migration. Need high
+              availability or disaster recovery? We've got you covered. We also provide active monitoring, backup
+              automation, and container orchestration (Docker/Kubernetes) to ensure your systems are always secure,
+              optimized, and future-ready. Whether you're building from scratch or scaling an existing setup, we make
+              your infrastructure worry-free.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail">
+        <i data-lucide="refresh-cw"></i>
+        <h2>Digital Transformation & Automation</h2>
+        <p>Streamline business operations with intelligent automation and smart integration technologies.</p>
+        <ul class="feature-list">
+          <li><i data-lucide="check-circle"></i> Business process automation (RPA, workflow engines)</li>
+          <li><i data-lucide="check-circle"></i> Document & e-sign integrations</li>
+          <li><i data-lucide="check-circle"></i> IoT & robotics solutions for smart operations</li>
+        </ul>
+        <div class="hover-overlay">
+          <div class="overlay-inner">
+            <h3>More Info</h3>
+            <p>Stuck in repetitive workflows and outdated systems? Our digital transformation services are designed to
+              reinvent how your business operates. We leverage Robotic Process Automation (RPA), smart workflow engines,
+              and API-driven integrations to eliminate manual tasks and reduce operational bottlenecks. From internal
+              CRM automation to IoT-enabled process control, we tailor solutions that are aligned to your exact needs.
+              We also help you map out inefficiencies, identify cost-saving opportunities, and deploy technologies that
+              dramatically improve agility, speed, and customer satisfaction. It’s not just automation — it’s
+              reinvention.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail">
+        <i data-lucide="trending-up"></i>
+        <h2>Digital Marketing & SEO</h2>
+        <p>Enhance your visibility and drive results with precision-targeted digital campaigns and optimizations.</p>
+        <ul class="feature-list">
+          <li><i data-lucide="check-circle"></i> Search Engine Optimization (on-page & technical SEO)</li>
+          <li><i data-lucide="check-circle"></i> SEM/PPC campaigns (Google Ads, Bing Ads)</li>
+          <li><i data-lucide="check-circle"></i> YouTube & video advertising</li>
+        </ul>
+        <div class="hover-overlay">
+          <div class="overlay-inner">
+            <h3>More Info</h3>
+            <p>Marketing is no longer a guessing game. Our approach combines data-driven strategies with creative
+              storytelling to drive real growth. We audit and optimize your site for technical SEO, create
+              high-converting ad campaigns across Google and Bing, and help you dominate organic search with powerful
+              content. Need YouTube ads, landing pages, or email funnels? We do it all. Our digital marketing plans are
+              customized around your KPIs — whether that’s leads, conversions, or visibility. With detailed reporting,
+              A/B testing, and constant refinement, we ensure your brand always performs above the curve.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail">
+        <i data-lucide="users"></i>
+        <h2>Social Media & Brand Strategy</h2>
+        <p>Grow your audience and brand recognition across platforms with creative storytelling and engagement.</p>
+        <ul class="feature-list">
+          <li><i data-lucide="check-circle"></i> Social media marketing (Facebook, Instagram, LinkedIn, TikTok)</li>
+          <li><i data-lucide="check-circle"></i> Community-building campaigns (Discord, Telegram)</li>
+          <li><i data-lucide="check-circle"></i> Influencer partnerships & advocacy programs</li>
+        </ul>
+        <div class="hover-overlay">
+          <div class="overlay-inner">
+            <h3>More Info</h3>
+            <p>Your brand’s voice matters — and we help you amplify it. Our social strategy services are designed to
+              grow your digital presence across platforms like Instagram, LinkedIn, TikTok, and more. We help you define
+              your brand tone, build an engaging content calendar, and craft visuals that resonate with your audience.
+              From community management and influencer campaigns to viral content and live engagement tactics, we ensure
+              your social footprint drives real results. It's not just about posting — it's about building loyal
+              communities, real conversations, and a memorable digital identity that scales.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail">
+        <i data-lucide="file-text"></i>
+        <h2>Content & Copywriting Services</h2>
+        <p>Inspire your audience with professionally written content tailored for your voice and business goals.</p>
+        <ul class="feature-list">
+          <li><i data-lucide="check-circle"></i> Content marketing strategy & creation (blogs, whitepapers)</li>
+          <li><i data-lucide="check-circle"></i> Email marketing campaigns</li>
+          <li><i data-lucide="check-circle"></i> Video scriptwriting and production support</li>
+        </ul>
+        <div class="hover-overlay">
+          <div class="overlay-inner">
+            <h3>More Info</h3>
+            <p>Great content isn’t filler — it’s a business asset. Our team of skilled copywriters and content
+              strategists help you deliver messaging that resonates and drives action. We create blog posts that rank,
+              landing pages that convert, email sequences that engage, and video scripts that tell powerful stories.
+              Everything is tailored to your brand tone, your audience persona, and your campaign objectives. Whether
+              you're B2B or B2C, technical or lifestyle, we make your voice stand out with clarity, precision, and charm
+              — all optimized for both people and algorithms.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail">
+        <i data-lucide="briefcase"></i>
+        <h2>Consulting & Project Management</h2>
+        <p>Expert consulting for digital transformation, IT strategy, and full-cycle project execution.</p>
+        <ul class="feature-list">
+          <li><i data-lucide="check-circle"></i> Technical & strategic IT consulting</li>
+          <li><i data-lucide="check-circle"></i> Requirements engineering & solution architecture</li>
+          <li><i data-lucide="check-circle"></i> End-to-end project delivery and support</li>
+        </ul>
+        <div class="hover-overlay">
+          <div class="overlay-inner">
+            <h3>More Info</h3>
+            <p>Digital projects are complex — we make them simple. Our consulting team bridges the gap between business
+              needs and technical execution. We help define clear project scopes, map user journeys, set development
+              sprints, and lead delivery from concept to launch. Whether you need help planning a digital transformation
+              roadmap, choosing the right tech stack, or managing cross-functional teams, we bring structure and
+              momentum. Our project managers and solution architects ensure that every stakeholder is aligned, every
+              milestone is measurable, and every deliverable adds value. Think of us as your in-house CTO — without the
+              overhead.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="onboarding-form-section">
+    <div class="container">
+      <h2>Client Onboarding Form</h2>
+      <!-- Message shown if NOT logged in -->
+      <p class="form-intro guest-message" style="display: none;">
+        You must be logged in to fill this form. <a href="join.html" class="btn primary">Login</a>
+      </p>
+
+      <!-- Message shown if logged in -->
+      <p class="form-intro logged-message" style="display: none;">
+        Please fill out the form below to start your onboarding with <strong>Softwork Solutions</strong>.
+        This helps us understand your project better and tailor our services to your needs.
+      </p>
+
+      <form class="onboarding-form">
+        <!-- 1. Company Information -->
+        <fieldset>
+          <legend>1. Company Information</legend>
+          <label>Company Name <input type="text" name="company_name" required></label>
+          <label>Contact Person <input type="text" name="contact_person" required></label>
+          <label>Position/Title <input type="text" name="position" required></label>
+          <label>Phone Number <input type="tel" name="phone" required></label>
+          <label>
+            Company Website
+            <input type="text" name="website" placeholder="https://example.com">
+            <br>
+            <small><input type="checkbox" id="no-website"> We don’t have a website</small>
+          </label>
+          <label>Business Address <textarea name="address" rows="2"></textarea></label>
+        </fieldset>
+
+        <!-- 2. Project Type -->
+        <fieldset>
+          <legend>2. Project Type</legend>
+          <label><input type="checkbox" name="project_type[]" value="Website Development"> Website Development</label>
+          <label><input type="checkbox" name="project_type[]" value="Custom Software Development"> Custom Software
+            Development</label>
+          <label><input type="checkbox" name="project_type[]" value="SaaS Product Build"> SaaS Product Build</label>
+          <label><input type="checkbox" name="project_type[]" value="Digital Marketing"> Digital Marketing</label>
+          <label>Other: <input type="text" name="project_type_other"></label>
+        </fieldset>
+
+        <!-- 3. Project Overview -->
+        <fieldset>
+          <legend>3. Project Overview</legend>
+          <label>Project Goals <textarea name="goals" rows="3"></textarea></label>
+          <label>Top 3 Priorities <textarea name="priorities" rows="3"></textarea></label>
+        </fieldset>
+
+        <!-- 4. Branding & Design Assets -->
+        <fieldset>
+          <legend>4. Branding & Design Assets</legend>
+          <label>Logo Files
+            <select name="logo_provided">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <input type="text" name="logo_notes" placeholder="Notes">
+          </label>
+          <label>Brand Guidelines
+            <select name="brand_provided">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <input type="text" name="brand_notes" placeholder="Notes">
+          </label>
+          <label>Existing Website Access
+            <select name="website_access_provided">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <input type="text" name="website_notes" placeholder="Notes">
+          </label>
+          <label>Domain Registrar Login
+            <select name="domain_provided">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <input type="text" name="domain_notes" placeholder="Notes">
+          </label>
+          <label>Hosting Credentials
+            <select name="hosting_provided">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <input type="text" name="hosting_notes" placeholder="Notes">
+          </label>
+        </fieldset>
+
+        <!-- 5. Technical Details -->
+        <fieldset>
+          <legend>5. Technical Details</legend>
+          <label>Preferred CMS or Framework <input type="text" name="cms_framework"></label>
+          <label>Existing Website?
+            <label><input type="radio" name="existing_website" value="Yes"> Yes</label>
+            <label><input type="radio" name="existing_website" value="No"> No</label>
+          </label>
+          <label>Integrations Needed:</label>
+          <label><input type="checkbox" name="integrations[]" value="CRM"> CRM</label>
+          <label><input type="checkbox" name="integrations[]" value="Payment Gateway"> Payment Gateway</label>
+          <label><input type="checkbox" name="integrations[]" value="API"> API</label>
+          <label>Other Technical Requirements <textarea name="other_tech" rows="2"></textarea></label>
+        </fieldset>
+
+        <!-- 6. Content Readiness -->
+        <fieldset>
+          <legend>6. Content Readiness</legend>
+          <label>Text Content
+            <label><input type="radio" name="text_ready" value="Ready"> Ready</label>
+            <label><input type="radio" name="text_ready" value="In Progress"> In Progress</label>
+          </label>
+          <label>Images/Media
+            <label><input type="radio" name="media_ready" value="Ready"> Ready</label>
+            <label><input type="radio" name="media_ready" value="In Progress"> In Progress</label>
+          </label>
+          <label>Product/Service Details
+            <label><input type="radio" name="product_ready" value="Ready"> Ready</label>
+            <label><input type="radio" name="product_ready" value="In Progress"> In Progress</label>
+          </label>
+          <label>Sitemap/Pages List
+            <label><input type="radio" name="sitemap" value="Provided"> Provided</label>
+            <label><input type="radio" name="sitemap" value="TBD"> TBD</label>
+          </label>
+        </fieldset>
+
+        <!-- 7. Access and Logins -->
+        <fieldset>
+          <legend>7. Access and Logins</legend>
+          <label>Accounts/Tools Required <textarea name="access_logins" rows="3"
+              placeholder="Google Analytics, FTP, GitHub, etc."></textarea></label>
+        </fieldset>
+
+        <!-- 8. Project Timeline -->
+        <fieldset>
+          <legend>8. Project Timeline</legend>
+          <label>Desired Start Date <input type="date" name="start_date"></label>
+          <label>Target Launch/Delivery Date <input type="date" name="launch_date"></label>
+          <label>Key Deadlines or Events <textarea name="key_deadlines" rows="2"></textarea></label>
+        </fieldset>
+
+        <!-- 9. Communication Preferences -->
+        <fieldset>
+          <legend>9. Communication Preferences</legend>
+          <label>Preferred Method:
+            <label><input type="checkbox" name="comm_method[]" value="Email"> Email</label>
+            <label><input type="checkbox" name="comm_method[]" value="Slack"> Slack</label>
+            <label><input type="checkbox" name="comm_method[]" value="Phone"> Phone</label>
+            <label><input type="checkbox" name="comm_method[]" value="Other"> Other</label>
+          </label>
+          <label>Project Contacts <input type="text" name="project_contacts"></label>
+          <label>Weekly Updates?
+            <label><input type="radio" name="weekly_updates" value="Yes"> Yes</label>
+            <label><input type="radio" name="weekly_updates" value="No"> No</label>
+          </label>
+        </fieldset>
+
+        <!-- 10. Legal & Billing Info -->
+        <fieldset>
+          <legend>10. Legal & Billing Info</legend>
+          <label>Billing Contact Name <input type="text" name="billing_name"></label>
+          <label>Billing Email <input type="email" name="billing_email"></label>
+          <label>Billing Address <textarea name="billing_address" rows="2"></textarea></label>
+          <label>Tax ID / GST Number <input type="text" name="tax_id"></label>
+          <label>Preferred Payment Method <input type="text" name="payment_method"></label>
+          <label>PO Required?
+            <label><input type="radio" name="po_required" value="Yes"> Yes</label>
+            <label><input type="radio" name="po_required" value="No"> No</label>
+          </label>
+        </fieldset>
+
+        <!-- Signature -->
+        <fieldset>
+          <legend>Client Signature</legend>
+          <label>Signature <input type="text" name="signature" placeholder="Type full name"></label>
+          <label>Date <input type="date" name="signature_date"></label>
+        </fieldset>
+
+        <button type="submit" class="btn primary">Submit Form</button>
+      </form>
+    </div>
+  </section>
+
+
+  <section class="cta">
+    <div class="cta-inner">
+      <h2>Need a reliable tech partner?</h2>
+      <a href="contact.html" class="btn primary">Let's Talk</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <!-- Logo and Tagline -->
+        <div class="footer-left">
+          <img id="footer-logo" src="logo.png" alt="Softwork Solutions Logo">
+          <p>Softwork Solutions – powering your digital vision with innovative software solutions.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-center">
+          <h4>Quick Links</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Support (with icons) -->
+        <div class="footer-support">
+          <h4>Quick Support</h4>
+          <ul class="footer-nav">
+            <li><a href="privacy.html"><i data-lucide="file-lock"></i> Privacy Policy</a></li>
+            <li><a href="#"><i data-lucide="file-text"></i> Terms &amp; Conditions</a></li>
+            <li><a href="#"><i data-lucide="life-buoy"></i> Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Consolidated Contact Info -->
+        <div class="footer-right">
+          <h4>Contact Us</h4>
+          <address>
+            <div class="contact-item">
+              <i data-lucide="map-pin"></i>
+              <span> Goa, India. </span>
+            </div>
+            <div class="contact-item">
+              <i data-lucide="phone"></i>
+              <span> +91 8698462638 </span>
+            </div>
+            <div class="contact-item">
+              <i data-lucide="mail"></i>
+              <span> info@softworksolutions.com</span>
+            </div>
+          </address>
+        </div>
+      </div>
+
+      <!-- Footer bottom: social icons and copyright -->
+      <hr>
+      <div class="footer-bottom">
+        <div class="social-icons">
+          <a href="#"><i data-lucide="linkedin"></i></a>
+          <a href="#"><i data-lucide="twitter"></i></a>
+          <a href="#"><i data-lucide="facebook"></i></a>
+        </div>
+        <p>© 2026 Softwork Solutions. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>lucide.createIcons();</script>
+</body>
+
+</html>

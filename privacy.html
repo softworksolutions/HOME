@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy – Softwork Solutions</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script defer src="script.js"></script>
+    <link rel="icon" type="image/png" href="logo-light.png">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            color: #000;
+        }
+
+        body.dark .container {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Ghost Cursor -->
+    <div class="cursor-ghost" id="ghost">
+        <div class="ghost-body">
+            <canvas id="ghost-liquid"></canvas>
+            <div class="face">
+                <div class="eyes">
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                </div>
+                <div class="mouth"></div>
+            </div>
+            <div class="hands">
+                <div class="hand left-hand"></div>
+                <div class="hand right-hand"></div>
+            </div>
+            <div class="wavy-bottom">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="speech-bubble">Hi there!</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">
+                    <img id="logo-img" src="logo.png" alt="Softwork Logo" />
+                    <span>Softwork Solutions</span>
+                </a>
+            </div>
+            <div class="nav-center">
+                <label class="theme-switch">
+                    <span class="icon light"><i data-lucide="sun"></i></span>
+                    <input type="checkbox" id="theme-toggle" />
+                    <span class="slider"></span>
+                    <span class="icon dark"><i data-lucide="moon"></i></span>
+                </label>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="account.html" id="profile-icon-link" style="display: none;" title="Account">
+                    <i data-lucide="user-circle" class="nav-profile-icon"></i>
+                </a>
+                <a href="join.html" class="btn login-btn" id="login-button">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <canvas id="network-bg"></canvas>
+
+        <div class="hero-socials">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        </div>
+
+        <div class="hero-inner">
+            <h1>Our Privacy Promise</h1>
+            <p>Your trust matters. Here's how we protect your data.</p>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Content -->
+    <section class="onboarding-form-section">
+        <div class="container">
+            <h2>Privacy Policy</h2>
+            <p class="form-intro">
+                At Softwork Solutions, we are committed to protecting your privacy. This policy outlines how we collect,
+                use, and safeguard your personal information.
+            </p>
+
+            <div class="onboarding-form">
+                <fieldset>
+                    <legend>1. Information We Collect</legend>
+                    <p>We collect the following onboarding information when you engage with our services:</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> Company name</li>
+                        <li><i data-lucide="check-circle"></i> Contact person</li>
+                        <li><i data-lucide="check-circle"></i> Email address</li>
+                    </ul>
+                    <p>This information is used solely for internal service processing.</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. How We Use Your Data</legend>
+                    <p>Your information is used to deliver services, communicate with you, and improve our platform.
+                        <strong>We do not sell or share your data</strong> with third parties for marketing or external
+                        use.
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3. Data Security</legend>
+                    <p>We implement appropriate technical and organizational measures to safeguard your data from
+                        unauthorized access, alteration, or disclosure.</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>4. Your Rights</legend>
+                    <p>You have the right to access, correct, or delete your personal information at any time. Contact
+                        us at <a href="mailto:support@softworksolutions.com">support@softworksolutions.com</a> for
+                        assistance.</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>5. Cookies</legend>
+                    <p>We use cookies for website functionality and analytics. You can manage cookie preferences through
+                        your browser settings.</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>6. Changes to This Policy</legend>
+                    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with the
+                        updated revision date.</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>7. Contact Us</legend>
+                    <p>If you have any questions or concerns about our privacy practices, please contact us at <a
+                            href="mailto:support@softworksolutions.com">support@softworksolutions.com</a>.</p>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-columns">
+                <!-- Logo and Tagline -->
+                <div class="footer-left">
+                    <img id="footer-logo" src="logo.png" alt="Softwork Solutions Logo">
+                    <p>Softwork Solutions – powering your digital vision with innovative software solutions.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-center">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Support (with icons) -->
+                <div class="footer-support">
+                    <h4>Quick Support</h4>
+                    <ul class="footer-nav">
+                        <li><a href="privacy.html"><i data-lucide="file-lock"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i data-lucide="file-text"></i> Terms &amp; Conditions</a></li>
+                        <li><a href="#"><i data-lucide="life-buoy"></i> Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Consolidated Contact Info -->
+                <div class="footer-right">
+                    <h4>Contact Us</h4>
+                    <address>
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span> Goa, India. </span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <span> +91 8698462638 </span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <span> info@softworksolutions.com</span>
+                        </div>
+                    </address>
+                </div>
+            </div>
+
+            <!-- Footer bottom: social icons and copyright -->
+            <hr>
+            <div class="footer-bottom">
+                <div class="social-icons">
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                </div>
+                <p>© 2026 Softwork Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

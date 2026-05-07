@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="c0FBq5bxl5tlowWxCDASaA0B-ag_pnzRaJ02YVhNsVE" />
+  <title>Softwork Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <link rel="icon" type="image/png" href="logo-light.png">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+
+<body>
+  <div class="cursor-ghost" id="ghost">
+    <div class="ghost-body">
+      <canvas id="ghost-liquid"></canvas>
+      <div class="face">
+        <div class="eyes">
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+        </div>
+        <div class="mouth"></div>
+      </div>
+      <div class="hands">
+        <div class="hand left-hand"></div>
+        <div class="hand right-hand"></div>
+      </div>
+      <div class="wavy-bottom">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="speech-bubble">Hi there!</div>
+    </div>
+  </div>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="logo">
+          <img id="logo-img" src="logo.png" alt="Softwork Logo">
+          <span>Softwork Solutions</span>
+        </div>
+      </div>
+      <div class="mobile-only">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+      <div class="nav-center">
+        <label class="theme-switch">
+          <span class="icon light"><i data-lucide="sun"></i></span>
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+          <span class="icon dark"><i data-lucide="moon"></i></span>
+        </label>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="account.html" id="profile-icon-link" style="display: none;" title="Account">
+          <i data-lucide="user-circle" class="nav-profile-icon"></i>
+        </a>
+        <a href="join.html" class="btn login-btn" id="login-button">Login</a>
+      </div>
+    </div>
+  </header>
+  <section class="hero pre-fade">
+    <canvas id="network-bg"></canvas>
+    <!-- Left Social Icons -->
+    <div class="hero-socials">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+        <i data-lucide="facebook"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+        <i data-lucide="twitter"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+        <i data-lucide="instagram"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+        <i data-lucide="linkedin"></i>
+      </a>
+    </div>
+
+    <!-- Centered Text -->
+    <div class="hero-inner">
+      <h1>Powering <span id="typed-text"></span></h1>
+
+      <p>Custom Software • IT Infrastructure • Digital Transformation</p>
+    </div>
+  </section>
+  <section class="services pre-fade" id="services">
+    <div class="section-header">
+      <h2>Our Services</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <i data-lucide="code"></i>
+        <h3>Custom Software & Web Development</h3>
+        <ul>
+          <li><i data-lucide="check-circle"></i> Responsive websites (HTML5, React, Next.js)</li>
+          <li><i data-lucide="check-circle"></i> Mobile apps (native iOS/Android & hybrid frameworks)</li>
+          <li><i data-lucide="check-circle"></i> Bespoke desktop and enterprise software</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <i data-lucide="server"></i>
+        <h3>IT Infrastructure & Cloud Solutions</h3>
+        <ul>
+          <li><i data-lucide="check-circle"></i> Domain registration, hosting & CDN setup</li>
+          <li><i data-lucide="check-circle"></i> Server management & monitoring (on-prem & cloud)</li>
+          <li><i data-lucide="check-circle"></i> Cloud migrations, AWS/Azure/GCP consulting</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <i data-lucide="refresh-cw"></i>
+        <h3>Digital Transformation & Automation</h3>
+        <ul>
+          <li><i data-lucide="check-circle"></i> Business process automation (RPA, workflow engines)</li>
+          <li><i data-lucide="check-circle"></i> Document & e-sign integrations</li>
+          <li><i data-lucide="check-circle"></i> IoT & robotics solutions for smart operations</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <i data-lucide="trending-up"></i>
+        <h3>Digital Marketing & SEO</h3>
+        <ul>
+          <li><i data-lucide="check-circle"></i> Search Engine Optimization (on-page & technical SEO)</li>
+          <li><i data-lucide="check-circle"></i> SEM/PPC campaigns (Google Ads, Bing Ads)</li>
+          <li><i data-lucide="check-circle"></i> YouTube & video advertising</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <i data-lucide="users"></i>
+        <h3>Social Media & Brand Strategy</h3>
+        <ul>
+          <li><i data-lucide="check-circle"></i> Social media marketing (FB, IG, LinkedIn, TikTok)</li>
+          <li><i data-lucide="check-circle"></i> Community-building (Discord, Telegram)</li>
+          <li><i data-lucide="check-circle"></i> Influencer partnerships & advocacy programs</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <i data-lucide="file-text"></i>
+        <h3>Content & Copywriting Services</h3>
+        <ul>
+          <li><i data-lucide="check-circle"></i> Content strategy & creation (blogs, whitepapers)</li>
+          <li><i data-lucide="check-circle"></i> Email marketing campaigns</li>
+          <li><i data-lucide="check-circle"></i> Video scriptwriting & production support</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <i data-lucide="briefcase"></i>
+        <h3>Consulting & Project Management</h3>
+        <ul>
+          <li><i data-lucide="check-circle"></i> Technical & strategic IT consulting</li>
+          <li><i data-lucide="check-circle"></i> Requirements engineering & solution architecture</li>
+          <li><i data-lucide="check-circle"></i> End-to-end project delivery & support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="why-choose-us pre-fade">
+    <div class="container">
+      <h2>Why Choose Us</h2>
+      <div class="why-features">
+        <div class="why-feature">
+          <i data-lucide="headphones"></i>
+          <h4>24/7 Support</h4>
+          <p>We’re available anytime you need us, with round-the-clock support to keep your business running.</p>
+        </div>
+        <div class="why-feature">
+          <i data-lucide="bar-chart-3"></i>
+          <h4>Industry Expertise</h4>
+          <p>Years of experience across sectors ensure reliable, scalable, and smart digital solutions.</p>
+        </div>
+        <div class="why-feature">
+          <i data-lucide="layers"></i>
+          <h4>Custom Solutions</h4>
+          <p>We don’t do cookie-cutter. Every solution is tailored to your goals, users, and budget.</p>
+        </div>
+      </div>
+
+      <!-- NEW Values Grid -->
+      <div class="value-grid">
+        <div class="value-card">
+          <i data-lucide="shield-check"></i>
+          <h4>Integrity</h4>
+          <p>We operate with full transparency, honoring trust and ethical standards in everything we do.</p>
+        </div>
+        <div class="value-card">
+          <i data-lucide="zap"></i>
+          <h4>Innovation</h4>
+          <p>Our team thrives on pushing boundaries with modern tools, automation, and smart engineering.</p>
+        </div>
+        <div class="value-card">
+          <i data-lucide="heart"></i>
+          <h4>Client First</h4>
+          <p>We prioritize your goals and user experience, treating your business like our own.</p>
+        </div>
+        <div class="value-card">
+          <i data-lucide="globe"></i>
+          <h4>Scalability</h4>
+          <p>Our architecture is built to grow with your business across platforms, regions, and scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section pre-fade">
+    <div class="container">
+      <h2 class="testimonials-heading">What Our Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <img src="imp1.png" alt="Shreak.P Rebel" class="testimonial-img" />
+          <div class="testimonial-body">
+            <p class="testimonial-quote">“Softwork isn’t just a vendor — they’re our innovation partner.”</p>
+            <div class="testimonial-info">
+              <h4>Shreak.P Rebel</h4>
+              <p class="role">VP Tech, Rebel Group</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="imp2.png" alt="Sudakar Vali" class="testimonial-img" />
+          <div class="testimonial-body">
+            <p class="testimonial-quote">“They overdelivered on every milestone. Flawless execution.”</p>
+            <div class="testimonial-info">
+              <h4>Sudakar Vali</h4>
+              <p class="role">Director, Vali Systems</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="imp3.png" alt="Steve Johnson" class="testimonial-img" />
+          <div class="testimonial-body">
+            <p class="testimonial-quote">“We scaled 3× in 6 months. Their solutions paid for themselves fast.”</p>
+            <div class="testimonial-info">
+              <h4>Steve Johnson</h4>
+              <p class="role">Founder, Ascend Tech</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="imp4.png" alt="Alicia Tran" class="testimonial-img" />
+          <div class="testimonial-body">
+            <p class="testimonial-quote">“Brilliant team, smart strategies, and a joy to collaborate with.”</p>
+            <div class="testimonial-info">
+              <h4>Alicia Tran</h4>
+              <p class="role">CMO, NovaX</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="rahul.png" alt="Rahul Dev" class="testimonial-img" />
+          <div class="testimonial-body">
+            <p class="testimonial-quote">“Their team became part of ours. Seamless, proactive, and talented.”</p>
+            <div class="testimonial-info">
+              <h4>Rahul Dev</h4>
+              <p class="role">Product Head, Brightwave</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="alica.png" alt="Alicia Tran" class="testimonial-img" />
+          <div class="testimonial-body">
+            <p class="testimonial-quote">“One of the best team i would ever recommand”</p>
+            <div class="testimonial-info">
+              <h4>John Kham</h4>
+              <p class="role">SE, SpaceX</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="cta pre-fade">
+    <div class="cta-inner">
+      <h2>Let’s Build Something Great Together</h2>
+      <a href="contact.html" class="btn primary">Schedule a Call</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <!-- Logo and Tagline -->
+        <div class="footer-left">
+          <img id="footer-logo" src="logo.png" alt="Softwork Solutions Logo">
+          <p>Softwork Solutions – powering your digital vision with innovative software solutions.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-center">
+          <h4>Quick Links</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Support (with icons) -->
+        <div class="footer-support">
+          <h4>Quick Support</h4>
+          <ul class="footer-nav">
+            <li><a href="privacy.html"><i data-lucide="file-lock"></i> Privacy Policy</a></li>
+            <li><a href="#"><i data-lucide="file-text"></i> Terms &amp; Conditions</a></li>
+            <li><a href="#"><i data-lucide="life-buoy"></i> Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Consolidated Contact Info -->
+        <div class="footer-right">
+          <h4>Contact Us</h4>
+          <address>
+            <div class="contact-item">
+              <i data-lucide="map-pin"></i>
+              <span> Goa, India. </span>
+            </div>
+            <div class="contact-item">
+              <i data-lucide="phone"></i>
+              <span> +91 8698462638 </span>
+            </div>
+            <div class="contact-item">
+              <i data-lucide="mail"></i>
+              <span> info@softworksolutions.com</span>
+            </div>
+          </address>
+        </div>
+      </div>
+
+      <!-- Footer bottom: social icons and copyright -->
+      <hr>
+      <div class="footer-bottom">
+        <div class="social-icons">
+          <a href="#"><i data-lucide="linkedin"></i></a>
+          <a href="#"><i data-lucide="twitter"></i></a>
+          <a href="#"><i data-lucide="facebook"></i></a>
+        </div>
+        <p>© 2026 Softwork Solutions. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>lucide.createIcons();</script>
+</body>
+
+</html>
